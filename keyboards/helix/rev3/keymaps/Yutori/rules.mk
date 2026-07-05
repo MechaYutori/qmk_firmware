@@ -1,0 +1,17 @@
+NKRO_ENABLE = yes
+DEBOUNCE_TYPE = asym_eager_defer_pk
+DYNAMIC_MACRO_ENABLE = yes
+TAP_DANCE_ENABLE = yes
+
+#容量節約
+ENCODER_ENABLE = no
+EXTRAKEY_ENABLE = no
+SPACE_CADET_ENABLE = no
+GRAVE_ESC_ENABLE = no
+MOUSEKEY_ENABLE = no
+CONSOLE_ENABLE = no
+COMMAND_ENABLE = no
+MUSIC_ENABLE = no
+
+SRC += oled_display.c
+SRC += oled_func.c

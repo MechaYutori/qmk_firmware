@@ -33,9 +33,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "progmem.h"
 #include "wait.h"
 
-//改造してるぞ　改造してるぞで検索すれば改造箇所が見られる
-extern uint8_t oled_page;
-
 // Used commands from spec sheet: https://cdn-shop.adafruit.com/datasheets/SSD1306.pdf
 // for SH1106: https://www.velleman.eu/downloads/29/infosheets/sh1106_datasheet.pdf
 // for SH1107: https://www.displayfuture.com/Display/datasheet/controller/SH1107.pdf
@@ -446,16 +443,6 @@ static void rotate_90(const uint8_t *src, uint8_t *dest) {
 }
 
 void oled_render_dirty(bool all) {
-    //改造してるぞ
-    if(oled_active == false){
-        return;
-    }
-    if(oled_page == 0 ){
-        oled_off();
-        return;
-    }
-    //改造終わり
-
     // Do we have work to do?
     oled_dirty &= OLED_ALL_BLOCKS_MASK;
     if (!oled_dirty || !oled_initialized || oled_scrolling) {
